@@ -9,20 +9,20 @@ default_args = {
 }
 
 dag = DAG(
-    'hello_world',
+    'hello_world_2',
     default_args = default_args,
     schedule=timedelta(days=1)
 )
 
 t1 = BashOperator(
     task_id = 'hello_world',
-    bash_command='echo "Hello World"',
+    bash_command='echo "Hello World 2"',
     dag = dag
 )
 
 t2 = BashOperator(
     task_id = 'hello_dml',
-    bash_command='echo "Hello Data Mastery Lab"',
+    bash_command='echo "Hello Data Mastery Lab 2"',
     dag = dag
 )
 
